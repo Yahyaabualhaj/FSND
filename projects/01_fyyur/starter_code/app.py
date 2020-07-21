@@ -96,6 +96,7 @@ def index():
 def venues():
   # TODO: replace with real venues data.
   #       num_shows should be aggregated based on number of upcoming shows per venue.
+  data = db.session.query(Venue.city,Venue.state).group_by(Venue.city)
   data=[{
     "city": "San Francisco",
     "state": "CA",
